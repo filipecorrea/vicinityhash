@@ -166,26 +166,28 @@ function compress(geohashes, minimum, maximum) {
     finalGeohashes.clear()
     deleteGeohashes.clear()
     for (const geohash of geohashes) {
-      const geohashPart = geohash.slice(0, -1)
-      if (!deleteGeohashes.has(geohashPart) && !deleteGeohashes.has(geohash)) {
-        const geohashCombinations = new Set(getGeohashCombinations(geohashPart))
+      if (geohash.length >= minimum) {
+        const part = geohash.slice(0, -1)
+        if (!deleteGeohashes.has(part) && !deleteGeohashes.has(geohash)) {
+          const geohashCombinations = new Set(getGeohashCombinations(part))
 
-        if (isSubset(geohashCombinations, geohashes)) {
-          finalGeohashes.add(geohashPart)
-          deleteGeohashes.add(geohashPart)
-        }
-        else {
-          deleteGeohashes.add(geohash)
-
-          if (geohash.length >= maximum) {
-            finalGeohashes.add(geohash.slice(0, maximum))
+          if (isSubset(geohashCombinations, geohashes)) {
+            finalGeohashes.add(part)
+            deleteGeohashes.add(part)
           }
           else {
-            finalGeohashes.add(geohash)
-          }
-        }
+            deleteGeohashes.add(geohash)
 
-        compressing = !finalGeohashesSize === finalGeohashes.size
+            if (geohash.length >= maximum) {
+              finalGeohashes.add(geohash.slice(0, maximum))
+            }
+            else {
+              finalGeohashes.add(geohash)
+            }
+          }
+
+          compressing = !finalGeohashesSize === finalGeohashes.size
+        }
       }
     }
 
