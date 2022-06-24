@@ -5,13 +5,13 @@ This code was developed based on [Ashwin Nair's proximityhash](https://github.co
 
 ## Installation
 
-Using npm:
+Via npm:
 
 ```bash
 npm install --save vicinityhash
 ```
 
-Using yarn:
+Via yarn:
 
 ```bash
 yarn add vicinityhash
@@ -37,7 +37,9 @@ const geohashes = vicinityhash.convert(geofence)
 
 ### Optional Configuration
 
-Geohash precision:
+#### Precision
+
+Usage:
 
 ```javascript
 const vicinityhash = require('vicinityhash')
@@ -55,7 +57,9 @@ const config = {
 const geohashes = vicinityhash.convert(geofence, config)
 ```
 
-Geohashes compression:
+#### Compression
+
+Usage:
 
 ```javascript
 const vicinityhash = require('vicinityhash')
@@ -73,9 +77,13 @@ const config = {
 const geohashes = vicinityhash.convert(geofence, config)
 ```
 
+Result:
+
 ![Geohashes compressed](./images/compress.png)
 
-Geohashes compression levels:
+#### Compression Levels
+
+Usage:
 
 ```javascript
 const vicinityhash = require('vicinityhash')
@@ -94,5 +102,7 @@ const config = {
 
 const geohashes = vicinityhash.convert(geofence, config)
 ```
+
+Result:
 
 ![Geohashes with customized compression levels](./images/custom_compress.png)
