@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Geohashes based on latitude, longitude and radius",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "test": "jest --coverage"
   },
