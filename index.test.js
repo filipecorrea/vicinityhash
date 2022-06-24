@@ -141,6 +141,71 @@ test('converts with compression levels', () => {
   ])
 })
 
+test('converts with precision and minimum levels equals', () => {
+  const config = {
+    precision: 6,
+    compress: true,
+    compressMin: 6,
+    compressMax: 7
+  }
+
+  const geohashes = vicinityhash.convert(geofence, config)
+
+  expect(geohashes).toStrictEqual([
+    'u09tuq', 'u09tun', 'u09tgy',
+    'u09tuw', 'u09tuy', 'u09tgw',
+    'u09tur', 'u09tum', 'u09tup',
+    'u09tuj', 'u09tgz', 'u09tgv',
+    'u09tux', 'u09tut', 'u09tuz',
+    'u09tuv', 'u09tgx', 'u09tgt',
+    'u09wh2', 'u09tuk', 'u09wh0',
+    'u09tuh', 'u09w5b', 'u09tgu',
+    'u09wh8', 'u09tus', 'u09wh3',
+    'u09tu7', 'u09wh1', 'u09tu5',
+    'u09w5c', 'u09tgg', 'u09wh9',
+    'u09tue'
+  ])
+})
+
+test('converts with minimum level lower than precision', () => {
+  const config = {
+    precision: 6,
+    compress: true,
+    compressMin: 4,
+    compressMax: 6
+  }
+
+  const geohashes = vicinityhash.convert(geofence, config)
+
+  expect(geohashes).toStrictEqual([
+    'u09tuq', 'u09tun', 'u09tgy',
+    'u09tuw', 'u09tuy', 'u09tgw',
+    'u09tur', 'u09tum', 'u09tup',
+    'u09tuj', 'u09tgz', 'u09tgv',
+    'u09tux', 'u09tut', 'u09tuz',
+    'u09tuv', 'u09tgx', 'u09tgt',
+    'u09wh2', 'u09tuk', 'u09wh0',
+    'u09tuh', 'u09w5b', 'u09tgu',
+    'u09wh8', 'u09tus', 'u09wh3',
+    'u09tu7', 'u09wh1', 'u09tu5',
+    'u09w5c', 'u09tgg', 'u09wh9',
+    'u09tue'
+  ])
+})
+
+test('converts with maximum level lower than precision', () => {
+  const config = {
+    precision: 6,
+    compress: true,
+    compressMin: 4,
+    compressMax: 5
+  }
+
+  const geohashes = vicinityhash.convert(geofence, config)
+
+  expect(geohashes).toStrictEqual([ 'u09tu', 'u09tg', 'u09wh', 'u09w5' ])
+})
+
 test('throws error if latitude is invalid', () => {
   geofence.latitude = 'foo'
   expect(() => { vicinityhash.convert(geofence) }).toThrow('Latitude must be a number between -90 and 90')
@@ -216,17 +281,6 @@ test('throws error if compress maximum level is invalid', () => {
 
   config = { compress: true, compressMax: 13 }
   expect(() => { vicinityhash.convert(geofence, config) }).toThrow('Compress maximum level must be a number between 1 and 12')
-})
-
-test('throws error if compress minimum level is lower than precision', () => {
-  const config = {
-    precision: 5,
-    compress: true,
-    compressMin: 6,
-    compressMax: 6
-  }
-
-  expect(() => { vicinityhash.convert(geofence, config) }).toThrow('Compress minimum level must be greater than precision level')
 })
 
 test('throws error if compress minimum level is greater than maximum level', () => {

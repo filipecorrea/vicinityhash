@@ -124,10 +124,6 @@ function validateConfig(config) {
     throw new Error('Compress maximum level must be a number between 1 and 12')
   }
 
-  if (compressMin > precision) {
-    throw new Error('Compress minimum level must be greater than precision level')
-  }
-
   if (compressMin > compressMax) {
     throw new Error('Compress minimum level must be greater than maximum level')
   }
