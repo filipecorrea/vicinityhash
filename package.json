@@ -1,0 +1,34 @@
+{
+  "name": "vicinityhash",
+  "version": "1.0.0",
+  "description": "Geohashes based on latitude, longitude and radius",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/filipecorrea/vicinityhash.git"
+  },
+  "keywords": [
+    "geofence",
+    "geohash",
+    "vicinity",
+    "latitude",
+    "longitude",
+    "radius"
+  ],
+  "author": "Filipe Correa <filipecorrea@me.com> (http://github.com/filipecorrea)",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/filipecorrea/vicinityhash/issues"
+  },
+  "homepage": "https://github.com/filipecorrea/vicinityhash#readme",
+  "dependencies": {
+    "ngeohash": "^0.6.3"
+  },
+  "devDependencies": {
+    "jest": "^28.1.1"
+  }
+}
