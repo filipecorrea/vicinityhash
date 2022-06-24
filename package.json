@@ -14,7 +14,10 @@
   "keywords": [
     "geofence",
     "geohash",
+    "geolocation",
     "vicinity",
+    "circle",
+    "proximity",
     "latitude",
     "longitude",
     "radius"
