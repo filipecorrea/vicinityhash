@@ -1,7 +1,7 @@
 # vicinityhash
 Given a latitude, longitude and the radius, this library converts a circular [geofence](https://en.wikipedia.org/wiki/Geo-fence) area into a set of [geohashes](https://en.wikipedia.org/wiki/Geohash).
 
-This code was developed based on [Ashwin Nair's proximityhash](https://github.com/ashwin711/proximityhash).
+This code was developed based on [Ashwin Nair's algorithm](https://github.com/ashwin711/proximityhash).
 
 ## Installation
 
@@ -23,6 +23,20 @@ With JavaScript:
 
 ```javascript
 const vicinityhash = require('vicinityhash')
+
+const geofence = {
+  latitude: 51.51,
+  longitude: -0.07,
+  radius: 10000 // in meters
+}
+
+const geohashes = vicinityhash.convert(geofence)
+```
+
+With TypeScript:
+
+```typescript
+import * as vicinityhash from 'vicinityhash'
 
 const geofence = {
   latitude: 51.51,
