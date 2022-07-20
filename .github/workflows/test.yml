@@ -4,15 +4,15 @@ on:
   push:
     branches: [ main ]
     paths-ignore:
-      - images/**
-      - LICENSE
-      - README.md
+      - 'images/**'
+      - 'LICENSE'
+      - 'README.md'
   pull_request:
     branches: [ main ]
     paths-ignore:
-      - images/**
-      - LICENSE
-      - README.md
+      - 'images/**'
+      - 'LICENSE'
+      - 'README.md'
 
 jobs:
   test:
