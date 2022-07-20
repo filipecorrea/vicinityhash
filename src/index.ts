@@ -1,4 +1,4 @@
-const geohash = require('ngeohash')
+import geohash from 'ngeohash'
 
 const defaultPrecision: number = 7
 const defaultCompress: boolean = false
@@ -62,7 +62,7 @@ export function convert(
   const latitudeMoves = Math.ceil(radius / height)
   const longitudeMoves = Math.ceil(radius / width)
 
-  const coordinates = []
+  const coordinates: [number, number][] = []
 
   for (let i = 0; i < latitudeMoves; i++) {
     const coordinateLatitude = height * i
@@ -81,7 +81,7 @@ export function convert(
     }
   }
 
-  const geohashes = coordinates.reduce((acc: string[], present, index: number) => {
+  const geohashes = coordinates.reduce((acc: string[], present: [number, number], index: number) => {
     acc.push(geohash.encode(present[0], present[1], precision))
     return acc
   }, [])
@@ -97,13 +97,7 @@ export function convert(
   return geohashes
 }
 
-function validateGeofence(
-  geofence: {
-    latitude: number
-    longitude: number
-    radius: number
-  }
-) {
+function validateGeofence(geofence: { latitude: number, longitude: number, radius: number }) {
   const { latitude, longitude, radius } = geofence
 
   if (isNaN(latitude) || latitude < -90 || latitude > 90) {
@@ -117,14 +111,7 @@ function validateGeofence(
   }
 }
 
-function validateConfig(
-  config: {
-    precision?: number
-    compress?: boolean
-    compressMin?: number
-    compressMax?: number
-  }
-) {
+function validateConfig(config: { precision?: number, compress?: boolean, compressMin?: number, compressMax?: number }) {
   const {
     precision = defaultPrecision,
     compress = defaultCompress,
@@ -154,13 +141,13 @@ function isCoordinateInGeofence(latitude: number, longitude: number, radius: num
   return Math.pow(longitude, 2) + Math.pow(latitude, 2) <= Math.pow(radius, 2)
 }
 
-function getCenter(latitude: number, longitude: number, height: number, width: number): [ number, number ] {
+function getCenter(latitude: number, longitude: number, height: number, width: number): [number, number] {
   const y = latitude + (height / 2)
   const x = longitude + (width / 2)
   return [ x, y ]
 }
 
-function getCoordinate(y: number, x: number, latitude: number, longitude: number): [ number, number ] {
+function getCoordinate(y: number, x: number, latitude: number, longitude: number): [number, number] {
   const pi = 3.14159265359
   const earthRadius = 6371000
 
