@@ -91,7 +91,7 @@ const geohashes = vicinityhash.convert(geofence, config)
 
 Result:
 
-![Geohashes compressed](./images/compress.png)
+![Geohashes compressed](./images/compression.png)
 
 #### Compression Levels
 
@@ -115,4 +115,4 @@ const geohashes = vicinityhash.convert(geofence, config)
 
 Result:
 
-![Geohashes with customized compression levels](./images/custom_compress.png)
+![Geohashes with custom compression levels](./images/compression_levels.png)
