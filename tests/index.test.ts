@@ -1,4 +1,4 @@
-const vicinityhash = require('./index')
+import * as vicinityhash from '../src/index'
 
 const geofence = {
   latitude: 48.858156,
@@ -207,7 +207,7 @@ test('converts with maximum level lower than precision', () => {
 })
 
 test('throws error if latitude is invalid', () => {
-  geofence.latitude = 'foo'
+  geofence.latitude = 'foo' as unknown as number
   expect(() => { vicinityhash.convert(geofence) }).toThrow('Latitude must be a number between -90 and 90')
 
   geofence.latitude = -91
@@ -220,7 +220,7 @@ test('throws error if latitude is invalid', () => {
 })
 
 test('throws error if longitude is invalid', () => {
-  geofence.longitude = 'foo'
+  geofence.longitude = 'foo' as unknown as number
   expect(() => { vicinityhash.convert(geofence) }).toThrow('Longitude must be a number between -180 and 180')
 
   geofence.longitude = -181
@@ -233,7 +233,7 @@ test('throws error if longitude is invalid', () => {
 })
 
 test('throws error if radius is invalid', () => {
-  geofence.radius = 'foo'
+  geofence.radius = 'foo' as unknown as number
   expect(() => { vicinityhash.convert(geofence) }).toThrow('Radius must be a positive integer')
 
   geofence.radius = 0
@@ -246,7 +246,7 @@ test('throws error if radius is invalid', () => {
 })
 
 test('throws error if precision is invalid', () => {
-  let config = { precision: 'foo' }
+  let config = { precision: 'foo' as unknown as number }
   expect(() => { vicinityhash.convert(geofence, config) }).toThrow('Precision level must be a number between 1 and 12')
 
   config = { precision: 0 }
@@ -257,12 +257,12 @@ test('throws error if precision is invalid', () => {
 })
 
 test('throws error if compress is invalid', () => {
-  const config = { compress: 'foo' }
+  const config = { compress: 'foo' as unknown as boolean }
   expect(() => { vicinityhash.convert(geofence, config) }).toThrow('Compress must be true or false')
 })
 
 test('throws error if compress minimum level is invalid', () => {
-  let config = { compress: true, compressMin: 'foo' }
+  let config = { compress: true, compressMin: 'foo' as unknown as number }
   expect(() => { vicinityhash.convert(geofence, config) }).toThrow('Compress minimum level must be a number between 1 and 12')
 
   config = { compress: true, compressMin: 0 }
@@ -273,7 +273,7 @@ test('throws error if compress minimum level is invalid', () => {
 })
 
 test('throws error if compress maximum level is invalid', () => {
-  let config = { compress: true, compressMax: 'foo' }
+  let config = { compress: true, compressMax: 'foo' as unknown as number }
   expect(() => { vicinityhash.convert(geofence, config) }).toThrow('Compress maximum level must be a number between 1 and 12')
 
   config = { compress: true, compressMax: 0 }
