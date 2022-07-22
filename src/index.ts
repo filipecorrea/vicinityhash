@@ -24,10 +24,10 @@ export function convert(
   const { latitude, longitude, radius } = geofence
   const precision = config?.precision || defaultPrecision
   const isCompressionEnabled = config?.compress || defaultCompress
-  const minimumCompression = config?.compressMin || defaultCompressMin
+  const minCompression = config?.compressMin || defaultCompressMin
   const maxCompression = config?.compressMax || defaultCompressMax
 
-  const gridWidth = [
+  const gridWidth: number[] = [
     5009400.0,
     1252300.0,
     156500.0,
@@ -41,7 +41,7 @@ export function convert(
     0.149,
     0.0370
   ]
-  const gridHeight = [
+  const gridHeight: number[] = [
     4992600.0,
     624100.0,
     156000.0,
@@ -56,22 +56,22 @@ export function convert(
     0.0199
   ]
 
-  const height = (gridHeight[precision - 1]) / 2
-  const width = (gridWidth[precision - 1]) / 2
+  const height: number = (gridHeight[precision - 1]) / 2
+  const width: number = (gridWidth[precision - 1]) / 2
 
-  const latitudeMoves = Math.ceil(radius / height)
-  const longitudeMoves = Math.ceil(radius / width)
+  const latitudeMoves: number = Math.ceil(radius / height)
+  const longitudeMoves: number = Math.ceil(radius / width)
 
   const coordinates: [number, number][] = []
 
   for (let i = 0; i < latitudeMoves; i++) {
-    const coordinateLatitude = height * i
+    const coordinateLatitude: number = height * i
 
     for (let j = 0; j < longitudeMoves; j++) {
-      const coordinateLongitude = width * j
+      const coordinateLongitude: number = width * j
 
       if (isCoordinateInGeofence(coordinateLatitude, coordinateLongitude, radius)) {
-        const center = getCenter(coordinateLatitude, coordinateLongitude, height, width)
+        const center: [number, number] = getCenter(coordinateLatitude, coordinateLongitude, height, width)
 
         coordinates.push(getCoordinate(center[1], center[0], latitude, longitude))
         coordinates.push(getCoordinate(-center[1], center[0], latitude, longitude))
@@ -81,17 +81,13 @@ export function convert(
     }
   }
 
-  const geohashes = coordinates.reduce((acc: string[], present: [number, number], index: number) => {
+  const geohashes: string[] = coordinates.reduce((acc: string[], present: [number, number]) => {
     acc.push(geohash.encode(present[0], present[1], precision))
     return acc
   }, [])
 
   if (isCompressionEnabled) {
-    return compress(
-      new Set(geohashes),
-      minimumCompression,
-      maxCompression
-    )
+    return compress(new Set(geohashes), minCompression, maxCompression)
   }
 
   return geohashes
@@ -131,7 +127,6 @@ function validateConfig(config: { precision?: number, compress?: boolean, compre
   if (isNaN(compressMax) || !Number.isInteger(compressMax) || compressMax < 1 || compressMax > 12) {
     throw new Error('Compress maximum level must be a number between 1 and 12')
   }
-
   if (compressMin > compressMax) {
     throw new Error('Compress minimum level must be greater than maximum level')
   }
@@ -142,52 +137,48 @@ function isCoordinateInGeofence(latitude: number, longitude: number, radius: num
 }
 
 function getCenter(latitude: number, longitude: number, height: number, width: number): [number, number] {
-  const y = latitude + (height / 2)
-  const x = longitude + (width / 2)
+  const y: number = latitude + (height / 2)
+  const x: number = longitude + (width / 2)
   return [ x, y ]
 }
 
 function getCoordinate(y: number, x: number, latitude: number, longitude: number): [number, number] {
-  const pi = 3.14159265359
-  const earthRadius = 6371000
+  const pi: number = 3.14159265359
+  const earthRadius: number = 6371000
 
-  const latitudeDiff = (y / earthRadius) * (180 / pi)
-  const longitudeDiff = (x / earthRadius) * (180 / pi) / Math.cos(latitude * pi / 180)
+  const latitudeDiff: number = (y / earthRadius) * (180 / pi)
+  const longitudeDiff: number = (x / earthRadius) * (180 / pi) / Math.cos(latitude * pi / 180)
 
-  const coordinateLatitude = latitude + latitudeDiff
-  const coordinateLongitude = longitude + longitudeDiff
+  const coordinateLatitude: number = latitude + latitudeDiff
+  const coordinateLongitude: number = longitude + longitudeDiff
 
   return [ coordinateLatitude, coordinateLongitude ]
 }
 
-function compress(geohashes: Set<string>, minimum: number, maximum: number): string[] {
+function compress(geohashes: Set<string>, minCompression: number, maxCompression: number): string[] {
   const deleteGeohashes: Set<string> = new Set()
   const finalGeohashes: Set<string> = new Set()
-  let compressing = true
+  let compressing: boolean = true
   let finalGeohashesSize: number = 0
 
   while (compressing) {
     finalGeohashes.clear()
     deleteGeohashes.clear()
+
     for (const geohash of geohashes) {
-      if (geohash.length >= minimum) {
-        const part = geohash.slice(0, -1)
+      if (geohash.length >= minCompression) {
+        const part: string = geohash.slice(0, -1)
+
         if (!deleteGeohashes.has(part) && !deleteGeohashes.has(geohash)) {
-          const geohashCombinations = new Set(getGeohashCombinations(part))
+          const geohashCombinations: Set<string> = new Set(getGeohashCombinations(part))
 
           if (isSubset(geohashCombinations, geohashes)) {
             finalGeohashes.add(part)
             deleteGeohashes.add(part)
           }
           else {
+            finalGeohashes.add(geohash.length >= maxCompression ? geohash.slice(0, maxCompression) : geohash)
             deleteGeohashes.add(geohash)
-
-            if (geohash.length >= maximum) {
-              finalGeohashes.add(geohash.slice(0, maximum))
-            }
-            else {
-              finalGeohashes.add(geohash)
-            }
           }
 
           compressing = !(finalGeohashesSize === finalGeohashes.size)
@@ -204,7 +195,7 @@ function compress(geohashes: Set<string>, minimum: number, maximum: number): str
 }
 
 function getGeohashCombinations(string: string): string[] {
-  const base32 = [
+  const base32: string[] = [
     '0',
     '1',
     '2',
@@ -238,7 +229,7 @@ function getGeohashCombinations(string: string): string[] {
     'y',
     'z'
   ]
-  return base32.reduce((acc: string[], present: string, index: number) => {
+  return base32.reduce((acc: string[], present: string) => {
     acc.push('' + string + present)
     return acc
   }, [])
@@ -246,7 +237,9 @@ function getGeohashCombinations(string: string): string[] {
 
 function isSubset(subset: Set<string>, set: Set<string>): boolean {
   for (var elem of subset) {
-    if (!set.has(elem)) return false
+    if (!set.has(elem)) {
+      return false
+    }
   }
   return true
 }
