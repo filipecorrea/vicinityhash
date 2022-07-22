@@ -81,7 +81,7 @@ export function convert(
     }
   }
 
-  const geohashes = coordinates.reduce((acc: string[], present: [number, number]) => {
+  const geohashes: string[] = coordinates.reduce((acc: string[], present: [number, number]) => {
     acc.push(geohash.encode(present[0], present[1], precision))
     return acc
   }, [])
@@ -155,7 +155,7 @@ function getCoordinate(y: number, x: number, latitude: number, longitude: number
   return [ coordinateLatitude, coordinateLongitude ]
 }
 
-function compress(geohashes: Set<string>, minimum: number, maximum: number): string[] {
+function compress(geohashes: Set<string>, minCompression: number, maxCompression: number): string[] {
   const deleteGeohashes: Set<string> = new Set()
   const finalGeohashes: Set<string> = new Set()
   let compressing: boolean = true
@@ -164,9 +164,11 @@ function compress(geohashes: Set<string>, minimum: number, maximum: number): str
   while (compressing) {
     finalGeohashes.clear()
     deleteGeohashes.clear()
+
     for (const geohash of geohashes) {
-      if (geohash.length >= minimum) {
+      if (geohash.length >= minCompression) {
         const part: string = geohash.slice(0, -1)
+
         if (!deleteGeohashes.has(part) && !deleteGeohashes.has(geohash)) {
           const geohashCombinations: Set<string> = new Set(getGeohashCombinations(part))
 
@@ -175,14 +177,8 @@ function compress(geohashes: Set<string>, minimum: number, maximum: number): str
             deleteGeohashes.add(part)
           }
           else {
+            finalGeohashes.add(geohash.length >= maxCompression ? geohash.slice(0, maxCompression) : geohash)
             deleteGeohashes.add(geohash)
-
-            if (geohash.length >= maximum) {
-              finalGeohashes.add(geohash.slice(0, maximum))
-            }
-            else {
-              finalGeohashes.add(geohash)
-            }
           }
 
           compressing = !(finalGeohashesSize === finalGeohashes.size)
