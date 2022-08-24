@@ -236,6 +236,9 @@ function getGeohashCombinations(string: string): string[] {
 }
 
 function isSubset(subset: Set<string>, set: Set<string>): boolean {
+  if (subset.size > set.size) {
+    return false
+  }
   for (var elem of subset) {
     if (!set.has(elem)) {
       return false
