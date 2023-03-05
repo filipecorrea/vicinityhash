@@ -16,6 +16,7 @@ on:
 
 jobs:
   test:
+    name: Node.js
     runs-on: ubuntu-latest
     strategy:
       matrix:
