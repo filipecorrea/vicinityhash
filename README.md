@@ -111,3 +111,17 @@ const geohashes = vicinityhash.convert(geofence, config)
 Visual representation of the geohashes created based on the geofence:
 
 ![Geohashes with custom compression levels](./docs/images/compression_levels.png)
+
+## Development
+
+### Prerequisites
+
+- [Node.js >= 16](https://nodejs.org/en/download/releases)
+
+### Test
+
+Run this command to start unit tests:
+
+```bash
+npm test
+```
