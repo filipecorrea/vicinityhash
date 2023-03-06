@@ -2,13 +2,8 @@ name: Test
 
 on:
   push:
-    branches: [ main ]
-    paths-ignore:
-      - 'docs/**'
-      - 'LICENSE'
-      - 'README.md'
-  pull_request:
-    branches: [ main ]
+    branches:
+      - '*'
     paths-ignore:
       - 'docs/**'
       - 'LICENSE'
