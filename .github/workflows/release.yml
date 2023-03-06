@@ -1,0 +1,17 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    name: GitHub
+    runs-on: ubuntu-latest
+    steps:
+      - name: Release
+        uses: google-github-actions/release-please-action@v3
+        with:
+          release-type: node
+          package-name: vicinityhash
