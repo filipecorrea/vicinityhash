@@ -1,10 +1,15 @@
 import * as vicinityhash from '../src/index'
 
-const geofence = {
-  latitude: 48.858156,
-  longitude: 2.294776,
-  radius: 2000
-}
+const latitude = 48.858156
+const longitude = 2.294776
+const radius = 2000
+const geofence = { latitude, longitude, radius }
+
+beforeEach(() => {
+  geofence.latitude = latitude
+  geofence.longitude = longitude
+  geofence.radius = radius
+})
 
 test('converts given latitude, longitude and radius', () => {
   const geohashes = vicinityhash.convert(geofence)
@@ -215,8 +220,6 @@ test('throws error if latitude is invalid', () => {
 
   geofence.latitude = 91
   expect(() => { vicinityhash.convert(geofence) }).toThrow('Latitude must be a number between -90 and 90')
-
-  geofence.latitude = 48.858156
 })
 
 test('throws error if longitude is invalid', () => {
@@ -228,8 +231,6 @@ test('throws error if longitude is invalid', () => {
 
   geofence.longitude = 181
   expect(() => { vicinityhash.convert(geofence) }).toThrow('Longitude must be a number between -180 and 180')
-
-  geofence.longitude = 2.294776
 })
 
 test('throws error if radius is invalid', () => {
@@ -241,8 +242,6 @@ test('throws error if radius is invalid', () => {
 
   geofence.radius = -1
   expect(() => { vicinityhash.convert(geofence) }).toThrow('Radius must be a positive integer')
-  
-  geofence.radius = 20000
 })
 
 test('throws error if precision is invalid', () => {
