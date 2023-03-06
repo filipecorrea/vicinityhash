@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.2](https://github.com/filipecorrea/vicinityhash/compare/v2.2.1...v2.2.2) (2023-03-06)
+
+
+### Bug Fixes
+
+* tests dependency ([47e1aac](https://github.com/filipecorrea/vicinityhash/commit/47e1aac9e4a2fd8aa5fb73ee586e9ea65e9822ff))
+
 ## [2.2.1](https://github.com/filipecorrea/vicinityhash/compare/v2.2.0...v2.2.1) (2023-03-06)
 
 
