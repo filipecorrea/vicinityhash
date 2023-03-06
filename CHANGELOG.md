@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.3](https://github.com/filipecorrea/vicinityhash/compare/v2.2.2...v2.2.3) (2023-03-06)
+
+
+### Bug Fixes
+
+* workflow sequence ([98e6ce7](https://github.com/filipecorrea/vicinityhash/commit/98e6ce77cec3091d153e75c0bbbc74140395f25e))
+
 ## [2.2.2](https://github.com/filipecorrea/vicinityhash/compare/v2.2.1...v2.2.2) (2023-03-06)
 
 
