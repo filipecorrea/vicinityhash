@@ -1,6 +1,6 @@
 {
   "name": "vicinityhash",
-  "version": "2.2.5",
+  "version": "2.2.6",
   "description": "Geohashes based on latitude, longitude and radius",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
