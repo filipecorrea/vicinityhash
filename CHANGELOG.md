@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.2.5](https://github.com/filipecorrea/vicinityhash/compare/v2.2.4...v2.2.5) (2023-03-07)
+
+
+### Bug Fixes
+
+* release job name ([6e47108](https://github.com/filipecorrea/vicinityhash/commit/6e4710883618b027a3a1ae4e85fc9aa3cbdd039a))
+* simplify ([4e80982](https://github.com/filipecorrea/vicinityhash/commit/4e809822c0d4dcb8e63fe815e1228b05942a6d0b))
+
 ## [2.2.4](https://github.com/filipecorrea/vicinityhash/compare/v2.2.3...v2.2.4) (2023-03-06)
 
 
