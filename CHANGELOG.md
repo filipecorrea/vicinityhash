@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.0](https://github.com/filipecorrea/vicinityhash/compare/v2.2.6...v2.3.0) (2023-03-10)
+
+
+### Features
+
+* funding ([5874344](https://github.com/filipecorrea/vicinityhash/commit/587434476bd5954e05ce4aae05be15b04131c167))
+
 ## [2.2.6](https://github.com/filipecorrea/vicinityhash/compare/v2.2.5...v2.2.6) (2023-03-07)
 
 
