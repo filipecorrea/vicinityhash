@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.4.0](https://github.com/filipecorrea/vicinityhash/compare/v2.3.0...v2.4.0) (2023-05-11)
+
+
+### Features
+
+* node 20 ([ca5a307](https://github.com/filipecorrea/vicinityhash/commit/ca5a3078e9748afe9a1ca27f6000a0afb29cafed))
+
 ## [2.3.0](https://github.com/filipecorrea/vicinityhash/compare/v2.2.6...v2.3.0) (2023-03-10)
 
 
