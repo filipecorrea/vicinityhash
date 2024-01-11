@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.4.1](https://github.com/filipecorrea/vicinityhash/compare/v2.4.0...v2.4.1) (2024-01-10)
+
+
+### Bug Fixes
+
+* remove duplicate tests ([73b1a0c](https://github.com/filipecorrea/vicinityhash/commit/73b1a0c5f6c9c592d4be35280b2ed184acad727b))
+
 ## [2.4.0](https://github.com/filipecorrea/vicinityhash/compare/v2.3.0...v2.4.0) (2023-05-11)
 
 
