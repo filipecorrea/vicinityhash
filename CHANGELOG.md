@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.4.2](https://github.com/filipecorrea/vicinityhash/compare/v2.4.1...v2.4.2) (2024-01-11)
+
+
+### Bug Fixes
+
+* cleanup workflows ([4f31ec9](https://github.com/filipecorrea/vicinityhash/commit/4f31ec9419e9b77645f782d99857a0fc1dbb4319))
+
 ## [2.4.1](https://github.com/filipecorrea/vicinityhash/compare/v2.4.0...v2.4.1) (2024-01-10)
 
 
