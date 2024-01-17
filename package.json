@@ -9,6 +9,7 @@
   ],
   "scripts": {
     "test": "jest --config config/jest.config.ts --coverage",
+    "prebuild": "rm -rf dist",
     "build": "tsc -p config/tsconfig.json"
   },
   "repository": {
