@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.4.3](https://github.com/filipecorrea/vicinityhash/compare/v2.4.2...v2.4.3) (2024-01-17)
+
+
+### Bug Fixes
+
+* simplify directories ([3782228](https://github.com/filipecorrea/vicinityhash/commit/3782228f4d44a65c40242f745345c47d1abd5b0f))
+
 ## [2.4.2](https://github.com/filipecorrea/vicinityhash/compare/v2.4.1...v2.4.2) (2024-01-11)
 
 
