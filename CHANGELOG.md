@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.5.0](https://github.com/filipecorrea/vicinityhash/compare/v2.4.3...v2.5.0) (2024-12-11)
+
+
+### Features
+
+* node 22 ([0ba3427](https://github.com/filipecorrea/vicinityhash/commit/0ba3427c80782e0df531b3bcd7d65b0b9eafdea2))
+
+
+### Bug Fixes
+
+* lock dependencies versions ([2056b13](https://github.com/filipecorrea/vicinityhash/commit/2056b13b27a59a460960cc3d6ab2f663e02af8c1))
+
 ## [2.4.3](https://github.com/filipecorrea/vicinityhash/compare/v2.4.2...v2.4.3) (2024-01-17)
 
 
