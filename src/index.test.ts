@@ -14,25 +14,25 @@ beforeEach(() => {
 test('converts given latitude, longitude and radius', () => {
   const geohashes = vicinityhash.convert(geofence)
 
-  expect(geohashes.length).toBe(2264)
+  expect(geohashes.length).toBe(886)
   expect(geohashes).toEqual(expect.arrayContaining([
-    'u09tunr', 'u09tunr', 'u09tunq', 'u09tunq', 'u09tuq2', 'u09tuq2',
-    'u09tunm', 'u09tunm', 'u09tuq2', 'u09tuq2', 'u09tunm', 'u09tunm',
-    'u09tuq3', 'u09tuq3', 'u09tunk', 'u09tunk', 'u09tuq6', 'u09tuq6',
-    'u09tun7', 'u09tun7', 'u09tuq7', 'u09tuq7', 'u09tun6', 'u09tun6',
-    'u09tuq7', 'u09tuq7', 'u09tun6', 'u09tun6', 'u09tuqk', 'u09tuqk',
-    'u09tun3', 'u09tun3', 'u09tuqm', 'u09tuqm', 'u09tun2', 'u09tun2',
-    'u09tuqq', 'u09tuqq', 'u09tgyr', 'u09tgyr', 'u09tuqq', 'u09tuqq',
-    'u09tgyr', 'u09tgyr', 'u09tuqr', 'u09tuqr', 'u09tgyq', 'u09tgyq',
-    'u09tuw2', 'u09tuw2', 'u09tgym', 'u09tgym', 'u09tuw3', 'u09tuw3',
-    'u09tgyk', 'u09tgyk', 'u09tuw6', 'u09tuw6', 'u09tgy7', 'u09tgy7',
-    'u09tuw6', 'u09tuw6', 'u09tgy7', 'u09tgy7', 'u09tuw7', 'u09tuw7',
-    'u09tgy6', 'u09tgy6', 'u09tuwk', 'u09tuwk', 'u09tgy3', 'u09tgy3',
-    'u09tuwm', 'u09tuwm', 'u09tgy2', 'u09tgy2', 'u09tuwm', 'u09tuwm',
-    'u09tgy2', 'u09tgy2', 'u09tuwq', 'u09tuwq', 'u09tgwr', 'u09tgwr',
-    'u09tuwr', 'u09tuwr', 'u09tgwq', 'u09tgwq', 'u09tuy2', 'u09tuy2',
-    'u09tgwm', 'u09tgwm', 'u09tuy2', 'u09tuy2', 'u09tgwm', 'u09tgwm',
-    'u09tuy3', 'u09tuy3', 'u09tgwk', 'u09tgwk'
+    'u09tunr', 'u09tunq', 'u09tuq2', 'u09tunm', 'u09tuq3', 'u09tunk',
+    'u09tuq6', 'u09tun7', 'u09tuq7', 'u09tun6', 'u09tuqk', 'u09tun3',
+    'u09tuqm', 'u09tun2', 'u09tuqq', 'u09tgyr', 'u09tuqr', 'u09tgyq',
+    'u09tuw2', 'u09tgym', 'u09tuw3', 'u09tgyk', 'u09tuw6', 'u09tgy7',
+    'u09tuw7', 'u09tgy6', 'u09tuwk', 'u09tgy3', 'u09tuwm', 'u09tgy2',
+    'u09tuwq', 'u09tgwr', 'u09tuwr', 'u09tgwq', 'u09tuy2', 'u09tgwm',
+    'u09tuy3', 'u09tgwk', 'u09tuy6', 'u09tgw7', 'u09tuy7', 'u09tgw6',
+    'u09tunx', 'u09tunp', 'u09tunw', 'u09tunn', 'u09tuq8', 'u09tuq0',
+    'u09tunt', 'u09tunj', 'u09tuq9', 'u09tuq1', 'u09tuns', 'u09tunh',
+    'u09tuqd', 'u09tuq4', 'u09tune', 'u09tun5', 'u09tuqe', 'u09tuq5',
+    'u09tund', 'u09tun4', 'u09tuqs', 'u09tuqh', 'u09tun9', 'u09tun1',
+    'u09tuqt', 'u09tuqj', 'u09tun8', 'u09tun0', 'u09tuqw', 'u09tuqn',
+    'u09tgyx', 'u09tgyp', 'u09tuqx', 'u09tuqp', 'u09tgyw', 'u09tgyn',
+    'u09tuw8', 'u09tuw0', 'u09tgyt', 'u09tgyj', 'u09tuw9', 'u09tuw1',
+    'u09tgys', 'u09tgyh', 'u09tuwd', 'u09tuw4', 'u09tgye', 'u09tgy5',
+    'u09tuwe', 'u09tuw5', 'u09tgyd', 'u09tgy4', 'u09tuws', 'u09tuwh',
+    'u09tgy9', 'u09tgy1', 'u09tuwt', 'u09tuwj'
   ]))
 })
 
@@ -44,22 +44,12 @@ test('converts with reduced precision', () => {
   const geohashes = vicinityhash.convert(geofence, config)
 
   expect(geohashes).toStrictEqual([
-    'u09tuq', 'u09tuq', 'u09tun', 'u09tun', 'u09tuq', 'u09tuq',
-    'u09tgy', 'u09tgy', 'u09tuw', 'u09tuw', 'u09tgy', 'u09tgy',
-    'u09tuy', 'u09tuy', 'u09tgw', 'u09tgw', 'u09tur', 'u09tum',
-    'u09tup', 'u09tuj', 'u09tur', 'u09tum', 'u09tgz', 'u09tgv',
-    'u09tux', 'u09tut', 'u09tgz', 'u09tgv', 'u09tuz', 'u09tuv',
-    'u09tgx', 'u09tgt', 'u09tur', 'u09tum', 'u09tup', 'u09tuj',
-    'u09tur', 'u09tum', 'u09tgz', 'u09tgv', 'u09tux', 'u09tut',
-    'u09tgz', 'u09tgv', 'u09tuz', 'u09tuv', 'u09tgx', 'u09tgt',
-    'u09wh2', 'u09tuk', 'u09wh0', 'u09tuh', 'u09wh2', 'u09tuk',
-    'u09w5b', 'u09tgu', 'u09wh8', 'u09tus', 'u09w5b', 'u09tgu',
-    'u09wh2', 'u09tuk', 'u09wh0', 'u09tuh', 'u09wh2', 'u09tuk',
-    'u09w5b', 'u09tgu', 'u09wh8', 'u09tus', 'u09w5b', 'u09tgu',
-    'u09wh3', 'u09tu7', 'u09wh1', 'u09tu5', 'u09wh3', 'u09tu7',
-    'u09w5c', 'u09tgg', 'u09wh9', 'u09tue', 'u09w5c', 'u09tgg',
-    'u09wh3', 'u09tu7', 'u09wh1', 'u09tu5', 'u09wh3', 'u09tu7',
-    'u09w5c', 'u09tgg'
+    'u09tuq', 'u09tun', 'u09tgy', 'u09tuw', 'u09tuy', 'u09tgw',
+    'u09tur', 'u09tum', 'u09tup', 'u09tuj', 'u09tgz', 'u09tgv',
+    'u09tux', 'u09tut', 'u09tuz', 'u09tuv', 'u09tgx', 'u09tgt',
+    'u09wh2', 'u09tuk', 'u09wh0', 'u09tuh', 'u09w5b', 'u09tgu',
+    'u09wh8', 'u09tus', 'u09wh3', 'u09tu7', 'u09wh1', 'u09tu5',
+    'u09w5c', 'u09tgg', 'u09wh9', 'u09tue'
   ])
 })
 
@@ -70,28 +60,25 @@ test('converts with enhanced precision', () => {
 
   const geohashes = vicinityhash.convert(geofence, config)
 
-  expect(geohashes.length).toBe(69880)
+  expect(geohashes.length).toBe(26562)
   expect(geohashes).toEqual(expect.arrayContaining([
-    'u09tunr5', 'u09tunr5', 'u09tunqg', 'u09tunqg', 'u09tunr7',
-    'u09tunr7', 'u09tunqe', 'u09tunqe', 'u09tunr7', 'u09tunr7',
-    'u09tunqe', 'u09tunqe', 'u09tunre', 'u09tunre', 'u09tunq7',
-    'u09tunq7', 'u09tunrg', 'u09tunrg', 'u09tunq5', 'u09tunq5',
-    'u09tuq25', 'u09tuq25', 'u09tunmg', 'u09tunmg', 'u09tuq25',
-    'u09tuq25', 'u09tunmg', 'u09tunmg', 'u09tuq27', 'u09tuq27',
-    'u09tunme', 'u09tunme', 'u09tuq2e', 'u09tuq2e', 'u09tunm7',
-    'u09tunm7', 'u09tuq2g', 'u09tuq2g', 'u09tunm5', 'u09tunm5',
-    'u09tuq35', 'u09tuq35', 'u09tunm5', 'u09tunm5', 'u09tuq35',
-    'u09tuq35', 'u09tunkg', 'u09tunkg', 'u09tuq37', 'u09tuq37',
-    'u09tunke', 'u09tunke', 'u09tuq3e', 'u09tuq3e', 'u09tunk7',
-    'u09tunk7', 'u09tuq3g', 'u09tuq3g', 'u09tunk5', 'u09tunk5',
-    'u09tuq3g', 'u09tuq3g', 'u09tunk5', 'u09tunk5', 'u09tuq65',
-    'u09tuq65', 'u09tun7g', 'u09tun7g', 'u09tuq67', 'u09tuq67',
-    'u09tun7e', 'u09tun7e', 'u09tuq6e', 'u09tuq6e', 'u09tun77',
-    'u09tun77', 'u09tuq6e', 'u09tuq6e', 'u09tun77', 'u09tun77',
-    'u09tuq6g', 'u09tuq6g', 'u09tun75', 'u09tun75', 'u09tuq75',
-    'u09tuq75', 'u09tun6g', 'u09tun6g', 'u09tuq77', 'u09tuq77',
-    'u09tun6e', 'u09tun6e', 'u09tuq77', 'u09tuq77', 'u09tun6e',
-    'u09tun6e', 'u09tuq7e', 'u09tuq7e', 'u09tun67', 'u09tun67'
+    'u09tunr5', 'u09tunqg', 'u09tunr7', 'u09tunqe', 'u09tunre', 'u09tunq7',
+    'u09tunrg', 'u09tunq5', 'u09tuq25', 'u09tunmg', 'u09tuq27', 'u09tunme',
+    'u09tuq2e', 'u09tunm7', 'u09tuq2g', 'u09tunm5', 'u09tuq35', 'u09tunkg',
+    'u09tuq37', 'u09tunke', 'u09tuq3e', 'u09tunk7', 'u09tuq3g', 'u09tunk5',
+    'u09tuq65', 'u09tun7g', 'u09tuq67', 'u09tun7e', 'u09tuq6e', 'u09tun77',
+    'u09tuq6g', 'u09tun75', 'u09tuq75', 'u09tun6g', 'u09tuq77', 'u09tun6e',
+    'u09tuq7e', 'u09tun67', 'u09tuq7g', 'u09tun65', 'u09tuqk5', 'u09tun3g',
+    'u09tuqk7', 'u09tun3e', 'u09tuqke', 'u09tun37', 'u09tuqkg', 'u09tun35',
+    'u09tuqm5', 'u09tun2g', 'u09tuqm7', 'u09tun2e', 'u09tuqme', 'u09tun27',
+    'u09tuqmg', 'u09tun25', 'u09tuqq5', 'u09tgyrg', 'u09tuqq7', 'u09tgyre',
+    'u09tuqqe', 'u09tgyr7', 'u09tuqqg', 'u09tgyr5', 'u09tuqr5', 'u09tgyqg',
+    'u09tuqr7', 'u09tgyqe', 'u09tuqre', 'u09tgyq7', 'u09tuqrg', 'u09tgyq5',
+    'u09tuw25', 'u09tgymg', 'u09tuw27', 'u09tgyme', 'u09tuw2e', 'u09tgym7',
+    'u09tuw2g', 'u09tgym5', 'u09tuw35', 'u09tgykg', 'u09tuw37', 'u09tgyke',
+    'u09tuw3e', 'u09tgyk7', 'u09tuw3g', 'u09tgyk5', 'u09tuw65', 'u09tgy7g',
+    'u09tuw67', 'u09tgy7e', 'u09tuw6e', 'u09tgy77', 'u09tuw6g', 'u09tgy75',
+    'u09tuw75', 'u09tgy6g', 'u09tuw77', 'u09tgy6e'
   ]))
 })
 
@@ -210,6 +197,17 @@ test('converts with maximum level lower than precision', () => {
 
   expect(geohashes).toStrictEqual([ 'u09tu', 'u09tg', 'u09wh', 'u09w5' ])
 })
+
+test('ensures all geohashes are unique', () => {
+  const config = {
+    precision: 7,
+    compress: false,
+  };
+
+  const geohashes = vicinityhash.convert(geofence, config);
+
+  expect(new Set(geohashes).size).toBe(geohashes.length);
+});
 
 test('throws error if latitude is invalid', () => {
   geofence.latitude = 'foo' as unknown as number
