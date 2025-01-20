@@ -62,7 +62,7 @@ export function convert(
   const latitudeMoves: number = Math.ceil(radius / height)
   const longitudeMoves: number = Math.ceil(radius / width)
 
-  const coordinates: [number, number][] = []
+  const geohashSet = new Set<string>()
 
   for (let i = 0; i < latitudeMoves; i++) {
     const coordinateLatitude: number = height * i
@@ -73,24 +73,19 @@ export function convert(
       if (isCoordinateInGeofence(coordinateLatitude, coordinateLongitude, radius)) {
         const center: [number, number] = getCenter(coordinateLatitude, coordinateLongitude, height, width)
 
-        coordinates.push(getCoordinate(center[1], center[0], latitude, longitude))
-        coordinates.push(getCoordinate(-center[1], center[0], latitude, longitude))
-        coordinates.push(getCoordinate(center[1], -center[0], latitude, longitude))
-        coordinates.push(getCoordinate(-center[1], -center[0], latitude, longitude))
+        geohashSet.add(geohash.encode(...getCoordinate(center[1], center[0], latitude, longitude), precision))
+        geohashSet.add(geohash.encode(...getCoordinate(-center[1], center[0], latitude, longitude), precision))
+        geohashSet.add(geohash.encode(...getCoordinate(center[1], -center[0], latitude, longitude), precision))
+        geohashSet.add(geohash.encode(...getCoordinate(-center[1], -center[0], latitude, longitude), precision))
       }
     }
   }
 
-  const geohashes: string[] = coordinates.reduce((acc: string[], present: [number, number]) => {
-    acc.push(geohash.encode(present[0], present[1], precision))
-    return acc
-  }, [])
-
   if (isCompressionEnabled) {
-    return compress(new Set(geohashes), minCompression, maxCompression)
+    return compress(geohashSet, minCompression, maxCompression)
   }
 
-  return geohashes
+  return [...geohashSet]
 }
 
 function validateGeofence(geofence: { latitude: number, longitude: number, radius: number }) {
