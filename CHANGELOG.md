@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.5.1](https://github.com/filipecorrea/vicinityhash/compare/v2.5.0...v2.5.1) (2025-01-21)
+
+
+### Bug Fixes
+
+* lock ubuntu ([8eaeddb](https://github.com/filipecorrea/vicinityhash/commit/8eaeddbed76f48d47531076dc9910711b6f7c751))
+* only return unique geohashes when compress is false ([9238164](https://github.com/filipecorrea/vicinityhash/commit/92381645245523f034336d4a0bac80d7229705d8))
+
 ## [2.5.0](https://github.com/filipecorrea/vicinityhash/compare/v2.4.3...v2.5.0) (2024-12-11)
 
 
