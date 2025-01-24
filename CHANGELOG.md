@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.6.0](https://github.com/filipecorrea/vicinityhash/compare/v2.5.1...v2.6.0) (2025-01-24)
+
+
+### Features
+
+* test dependencies ([d25b851](https://github.com/filipecorrea/vicinityhash/commit/d25b8514eb9cb5eb56285e83092fbddf34168406))
+
+
+### Bug Fixes
+
+* package-lock path ([11a035e](https://github.com/filipecorrea/vicinityhash/commit/11a035e082d7aff5b9533b3a32b01f77157919a0))
+
 ## [2.5.1](https://github.com/filipecorrea/vicinityhash/compare/v2.5.0...v2.5.1) (2025-01-21)
 
 
