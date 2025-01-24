@@ -35,8 +35,8 @@ jobs:
         uses: actions/checkout@v4
       - name: Test
         run: |
-          if [ -f "app/package-lock.json" ]; then
-            if grep -q '"version": "' app/package-lock.json && ! grep -q '"from": "git"' app/package-lock.json; then
+          if [ -f "package-lock.json" ]; then
+            if grep -q '"version": "' package-lock.json && ! grep -q '"from": "git"' package-lock.json; then
               echo "Dependencies are properly locked"
             else
               echo "Error: Some dependencies are not properly locked"
