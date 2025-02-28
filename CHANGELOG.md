@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.7.0](https://github.com/filipecorrea/vicinityhash/compare/v2.6.0...v2.7.0) (2025-02-27)
+
+
+### Features
+
+* jest 29 ([6ddb75a](https://github.com/filipecorrea/vicinityhash/commit/6ddb75a1fd64524447df80e7a873fed4e8c89b66))
+* ts-jest 29 ([7bea584](https://github.com/filipecorrea/vicinityhash/commit/7bea584ca18dadb2b09a89c37978578e4ce0225a))
+
 ## [2.6.0](https://github.com/filipecorrea/vicinityhash/compare/v2.5.1...v2.6.0) (2025-01-24)
 
 
