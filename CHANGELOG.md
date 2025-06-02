@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.7.1](https://github.com/filipecorrea/vicinityhash/compare/v2.7.0...v2.7.1) (2025-06-02)
+
+
+### Bug Fixes
+
+* workflow permissions ([fa643dc](https://github.com/filipecorrea/vicinityhash/commit/fa643dcde8f411e0dca805de2f1d8310097de565))
+
 ## [2.7.0](https://github.com/filipecorrea/vicinityhash/compare/v2.6.0...v2.7.0) (2025-02-27)
 
 
