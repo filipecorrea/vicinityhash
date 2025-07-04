@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.8.0](https://github.com/filipecorrea/vicinityhash/compare/v2.7.1...v2.8.0) (2025-07-04)
+
+
+### Features
+
+* dependabot updates ([82dce6b](https://github.com/filipecorrea/vicinityhash/commit/82dce6b73f65f3b2ce7b61ac6b765b7a97c55556))
+* dependabot updates ([#201](https://github.com/filipecorrea/vicinityhash/issues/201)) ([9272690](https://github.com/filipecorrea/vicinityhash/commit/9272690916351093528538a3784d1d8782a14a7f))
+
 ## [2.7.1](https://github.com/filipecorrea/vicinityhash/compare/v2.7.0...v2.7.1) (2025-06-02)
 
 
