@@ -2,6 +2,11 @@
   "name": "vicinityhash",
   "version": "2.8.0",
   "description": "Geohashes based on latitude, longitude and radius",
+  "author": "Filipe Correa <filipecorrea@me.com> (http://github.com/filipecorrea)",
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=18"
+  },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -27,8 +32,6 @@
     "longitude",
     "radius"
   ],
-  "author": "Filipe Correa <filipecorrea@me.com> (http://github.com/filipecorrea)",
-  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/filipecorrea/vicinityhash/issues"
   },

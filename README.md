@@ -116,7 +116,7 @@ Visual representation of the geohashes created based on the geofence:
 
 ### Prerequisites
 
-- [Node.js >= 16](https://nodejs.org/en/download/releases)
+- [Node.js >= 18](https://nodejs.org/en/download/releases)
 
 ### Test
 
