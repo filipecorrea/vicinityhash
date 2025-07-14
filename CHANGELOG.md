@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.8.1](https://github.com/filipecorrea/vicinityhash/compare/v2.8.0...v2.8.1) (2025-07-14)
+
+
+### Bug Fixes
+
+* remove node 16 ([11c449c](https://github.com/filipecorrea/vicinityhash/commit/11c449c8463f6369e58e50e1d0682698f9185ce7))
+* remove node 16 ([#207](https://github.com/filipecorrea/vicinityhash/issues/207)) ([8177bf9](https://github.com/filipecorrea/vicinityhash/commit/8177bf95574c60f18038393de2e61d24a9fa0989))
+
 ## [2.8.0](https://github.com/filipecorrea/vicinityhash/compare/v2.7.1...v2.8.0) (2025-07-04)
 
 
