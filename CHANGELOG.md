@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.9.0](https://github.com/filipecorrea/vicinityhash/compare/v2.8.1...v2.9.0) (2025-07-16)
+
+
+### Features
+
+* node 24 ([5416dee](https://github.com/filipecorrea/vicinityhash/commit/5416dee56920840fe9a27ddc432509ea45e255c9))
+* node 24 ([#210](https://github.com/filipecorrea/vicinityhash/issues/210)) ([a549cdd](https://github.com/filipecorrea/vicinityhash/commit/a549cdd5fc50728ce2450796162bd9d8774596d0))
+
 ## [2.8.1](https://github.com/filipecorrea/vicinityhash/compare/v2.8.0...v2.8.1) (2025-07-14)
 
 

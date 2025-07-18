@@ -16,7 +16,7 @@ jobs:
       created: ${{ steps.release.outputs.release_created }}
     steps:
       - name: Release
-        uses: google-github-actions/release-please-action@v4
+        uses: google-github-actions/release-please-action@534536c1c22bf1b590511b1ab65c732a67439212 # v4
         id: release
         with:
           release-type: node
@@ -27,9 +27,9 @@ jobs:
     if: ${{ needs.release.outputs.created }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v4
         with:
           node-version: 18
           registry-url: 'https://registry.npmjs.org'
