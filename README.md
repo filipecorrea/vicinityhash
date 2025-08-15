@@ -4,7 +4,7 @@ Given latitude, longitude and radius, this library converts a circular [geofence
 
 This code was developed based on [Ashwin Nair's algorithm](https://github.com/ashwin711/proximityhash).
 
-## Installation
+## Install
 
 Via npm:
 
@@ -18,7 +18,7 @@ Via yarn:
 yarn add vicinityhash
 ```
 
-## Usage
+## Use
 
 With JavaScript:
 
@@ -52,7 +52,7 @@ Visual representation of the geohashes created based on the geofence:
 
 ![Geohashes](./docs/images/geohashes.png)
 
-### Optional Configuration
+### Optional configuration
 
 #### Precision
 
@@ -90,7 +90,7 @@ Visual representation of the geohashes created based on the geofence:
 
 ![Geohashes compressed](./docs/images/compression.png)
 
-#### Compression Levels
+#### Compression levels
 
 ```javascript
 const geofence = {
