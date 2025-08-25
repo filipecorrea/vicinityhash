@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.10.0](https://github.com/filipecorrea/vicinityhash/compare/v2.9.1...v2.10.0) (2025-08-25)
+
+
+### Features
+
+* ubuntu 24 ([429c4a5](https://github.com/filipecorrea/vicinityhash/commit/429c4a54704971642a4c15cd62874dce08ffef86))
+* ubuntu 24 ([#220](https://github.com/filipecorrea/vicinityhash/issues/220)) ([f8bc01e](https://github.com/filipecorrea/vicinityhash/commit/f8bc01e22427d6aeb7bac8f4a88c8363253bdccf))
+
 ## [2.9.1](https://github.com/filipecorrea/vicinityhash/compare/v2.9.0...v2.9.1) (2025-07-18)
 
 
