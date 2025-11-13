@@ -145,11 +145,10 @@ function getCenter(latitude: number, longitude: number, height: number, width: n
 }
 
 function getCoordinate(y: number, x: number, latitude: number, longitude: number): [number, number] {
-  const pi: number = 3.14159265359
   const earthRadius: number = 6371000
 
-  const latitudeDiff: number = (y / earthRadius) * (180 / pi)
-  const longitudeDiff: number = (x / earthRadius) * (180 / pi) / Math.cos(latitude * pi / 180)
+  const latitudeDiff: number = (y / earthRadius) * (180 / Math.PI)
+  const longitudeDiff: number = (x / earthRadius) * (180 / Math.PI) / Math.cos(latitude * Math.PI / 180)
 
   const coordinateLatitude: number = latitude + latitudeDiff
   const coordinateLongitude: number = longitude + longitudeDiff
