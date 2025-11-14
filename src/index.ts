@@ -18,6 +18,13 @@ export interface Config {
   compressMax?: number
 }
 
+const base32: string[] = [
+  '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
+  'b', 'c', 'd', 'e', 'f', 'g', 'h', 'j', 'k', 'm',
+  'n', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x',
+  'y', 'z'
+]
+
 export function convert(geofence: Geofence, config?: Config) {
   validateGeofence(geofence)
   if (config) validateConfig(config)
@@ -190,42 +197,8 @@ function compress(geohashes: Set<string>, minCompression: number, maxCompression
 }
 
 function getGeohashCombinations(string: string): string[] {
-  const base32: string[] = [
-    '0',
-    '1',
-    '2',
-    '3',
-    '4',
-    '5',
-    '6',
-    '7',
-    '8',
-    '9',
-    'b',
-    'c',
-    'd',
-    'e',
-    'f',
-    'g',
-    'h',
-    'j',
-    'k',
-    'm',
-    'n',
-    'p',
-    'q',
-    'r',
-    's',
-    't',
-    'u',
-    'v',
-    'w',
-    'x',
-    'y',
-    'z'
-  ]
   return base32.reduce((acc: string[], present: string) => {
-    acc.push('' + string + present)
+    acc.push(string + present)
     return acc
   }, [])
 }
