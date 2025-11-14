@@ -5,19 +5,20 @@ const defaultCompress: boolean = false
 const defaultCompressMin: number = 1
 const defaultCompressMax: number = 12
 
-export function convert(
-  geofence: {
-    latitude: number
-    longitude: number
-    radius: number
-  },
-  config?: {
-    precision?: number
-    compress?: boolean
-    compressMin?: number
-    compressMax?: number
-  }
-) {
+export interface Geofence {
+  latitude: number
+  longitude: number
+  radius: number
+}
+
+export interface Config {
+  precision?: number
+  compress?: boolean
+  compressMin?: number
+  compressMax?: number
+}
+
+export function convert(geofence: Geofence, config?: Config) {
   validateGeofence(geofence)
   if (config) validateConfig(config)
 
@@ -88,7 +89,7 @@ export function convert(
   return [...geohashSet]
 }
 
-function validateGeofence(geofence: { latitude: number, longitude: number, radius: number }) {
+function validateGeofence(geofence: Geofence) {
   const { latitude, longitude, radius } = geofence
 
   if (isNaN(latitude) || latitude < -90 || latitude > 90) {
@@ -102,7 +103,7 @@ function validateGeofence(geofence: { latitude: number, longitude: number, radiu
   }
 }
 
-function validateConfig(config: { precision?: number, compress?: boolean, compressMin?: number, compressMax?: number }) {
+function validateConfig(config: Config) {
   const {
     precision = defaultPrecision,
     compress = defaultCompress,

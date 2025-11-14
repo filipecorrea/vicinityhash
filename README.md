@@ -38,8 +38,9 @@ With TypeScript:
 
 ```typescript
 import * as vicinityhash from 'vicinityhash'
+import type { Geofence } from 'vicinityhash'
 
-const geofence = {
+const geofence: Geofence = {
   latitude: 51.51,
   longitude: -0.07,
   radius: 10000 // in meters
