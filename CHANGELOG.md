@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.11.0](https://github.com/filipecorrea/vicinityhash/compare/v2.10.0...v2.11.0) (2025-11-14)
+
+
+### Features
+
+* export types ([e834fc7](https://github.com/filipecorrea/vicinityhash/commit/e834fc7ee560b0487ab4a139c6003b323cb98e5e))
+* export types ([#245](https://github.com/filipecorrea/vicinityhash/issues/245)) ([ec195db](https://github.com/filipecorrea/vicinityhash/commit/ec195dbd1e59bfa9119cbb5047a14d6c9157e09e))
+
+
+### Bug Fixes
+
+* base32 recreation ([0835e7b](https://github.com/filipecorrea/vicinityhash/commit/0835e7beb7f310c9c0085d2d54cfc17293779801))
+* base32 recreation ([#243](https://github.com/filipecorrea/vicinityhash/issues/243)) ([0a7c53a](https://github.com/filipecorrea/vicinityhash/commit/0a7c53a0502fa2e69d9239306c71e0ef194597e8))
+* hardcoded pi number ([39dee9b](https://github.com/filipecorrea/vicinityhash/commit/39dee9b5305002413a70cc37b49f330419919a7e))
+* hardcoded pi number ([#242](https://github.com/filipecorrea/vicinityhash/issues/242)) ([a82aa21](https://github.com/filipecorrea/vicinityhash/commit/a82aa214199c5d3950f7dbc4425d7c9946bd73c4))
+
 ## [2.10.0](https://github.com/filipecorrea/vicinityhash/compare/v2.9.1...v2.10.0) (2025-08-25)
 
 
