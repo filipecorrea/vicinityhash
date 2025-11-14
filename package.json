@@ -1,6 +1,6 @@
 {
   "name": "vicinityhash",
-  "version": "2.10.0",
+  "version": "2.11.0",
   "description": "Geohashes based on latitude, longitude and radius",
   "author": "Filipe Correa <filipecorrea@me.com> (http://github.com/filipecorrea)",
   "license": "Apache-2.0",
