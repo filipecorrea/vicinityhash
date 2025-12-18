@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.12.0](https://github.com/filipecorrea/vicinityhash/compare/v2.11.0...v2.12.0) (2025-12-17)
+
+
+### Features
+
+* dependabot cooldown ([1bf48e2](https://github.com/filipecorrea/vicinityhash/commit/1bf48e29058dcfd06222a16df993f1a3b5d15ff3))
+* dependabot cooldown ([#252](https://github.com/filipecorrea/vicinityhash/issues/252)) ([f9a7c7f](https://github.com/filipecorrea/vicinityhash/commit/f9a7c7f85ae2c6bc5031c0a3b8d4124b38fe4855))
+
 ## [2.11.0](https://github.com/filipecorrea/vicinityhash/compare/v2.10.0...v2.11.0) (2025-11-14)
 
 
