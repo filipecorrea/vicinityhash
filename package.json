@@ -37,7 +37,7 @@
   },
   "homepage": "https://github.com/filipecorrea/vicinityhash#readme",
   "dependencies": {
-    "ngeohash": "0.6.3"
+    "ngeohash": "0.6.4"
   },
   "devDependencies": {
     "@types/jest": "30.0.0",
